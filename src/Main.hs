@@ -1,14 +1,5 @@
 module Main where
-import Happstack.Server (dir,
-                         nullConf,
-                         simpleHTTP,
-                         toResponse,
-                         toResponseBS,
-                         ok,
-                         badRequest,
-                         Response,
-                         ServerPart,
-                         lookBS)
+import Happstack.Server 
 import Control.Applicative
 import Control.Monad
 import Control.Monad.IO.Class
@@ -18,7 +9,9 @@ import Data.TZworld.Api
 import Data.Aeson
 
 main::IO()
-main = simpleHTTP nullConf tzworldApp
+main = do
+  putStrLn "starting tzworld-happstack server on port 8001"
+  simpleHTTP nullConf {port = 8001} tzworldApp
 
 
 tzworldApp::ServerPart Response
