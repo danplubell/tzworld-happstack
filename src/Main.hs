@@ -21,7 +21,7 @@ tzworldApp = msum
              ]
 
 noQueryParams::ServerPart Response
-noQueryParams = badRequest ( toResponse "No location provided")
+noQueryParams = sendBadRequest "No location provided"
 
 locationParams::ServerPart Response
 locationParams = do
