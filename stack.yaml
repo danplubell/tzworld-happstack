@@ -1,0 +1,6 @@
+flags: {}
+packages:
+- '.'
+- '../tzworld-api'
+extra-deps: []
+resolver: nightly-2015-09-21
